@@ -10,10 +10,21 @@ public class AppModeloOOMercado {
 
     public static void main(String[] args) {
         List<Pessoa> pessoas = new ArrayList<>();
+        List<Pedido> pedidos = new ArrayList<>();
+
         Pessoa uniCesumar = new Juridica("Universidade Cesumar - UNICESUMAR","01.554.654/0001-66");
         Pessoa wilson = new Fisica("Wilson Matos", "554.665.997-44");
 
-        pessoas.add(uniCesumar);
+        ItemPedido camiseta = new ItemPedido(2,15.00);
+        Pedido novoPedido = new Pedido();
+
+        pedidos.add(novoPedido);
+        
+        for (Pedido pedido : pedidos) {
+            System.out.println(novoPedido.getValorTotal());
+        }
+
+        /*pessoas.add(uniCesumar);
         pessoas.add(wilson);
 
         wilson.assumirPapel(new Reitor("ATO_2020_023A"));
@@ -29,7 +40,7 @@ public class AppModeloOOMercado {
                 System.out.println("Número do ato da posse: " + pessoa.getReitor().getNúmeroAtoDaPosse());
             }
             System.out.println();
-        }
+        }*/
     }
 
     private static void testandoUUIDs() {
