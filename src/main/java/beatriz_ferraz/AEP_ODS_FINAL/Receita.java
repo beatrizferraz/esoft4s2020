@@ -12,6 +12,7 @@ public class Receita {
     private List<PalavraChave> palavrasChave = new ArrayList<>(); 
     private PalavraChave palavraPesquisada; 
     private List<Avaliacao> avaliacao = new ArrayList<>(); 
+    private Usuario autorDaReceita; 
 
     public Receita (String titulo, String texto) {
         
@@ -43,6 +44,10 @@ public class Receita {
         this.texto = texto;
     }
 
+    public Usuario getAutorDaReceita() {
+        return autorDaReceita;
+    }
+
     public void addPalavraChave(PalavraChave novaPalavraChave) {
         this.palavrasChave.add(novaPalavraChave);
     }
@@ -58,10 +63,15 @@ public class Receita {
             stringPalavrasChave += p.toString() + "; ";
         }
 
+        String stringAvaliacao = "\nAVALIACOES";
+        for (Avaliacao a : this.avaliacao) {
+             stringAvaliacao += a.toString() + "\n";
+        }
+
         return "Título da Receita: " + titulo + "\n" 
                 + "Texto: " + texto + "\n"
-                + stringPalavrasChave.substring(0,stringPalavrasChave.length()) + "\n"
-                + "Nota: " + avaliacao + " estrelas.";
+                + stringPalavrasChave.substring(0,stringPalavrasChave.length())
+                + stringAvaliacao.substring(0,stringAvaliacao.length());
     }
 
     public void existemReceitasComEssaPalavraChave(PalavraChave palavraPesquisada) {

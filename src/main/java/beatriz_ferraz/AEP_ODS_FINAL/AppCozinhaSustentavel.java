@@ -10,12 +10,15 @@ public class AppCozinhaSustentavel {
        
         PalavraChave abobora = new PalavraChave("abobora");
         PalavraChave casca = new PalavraChave("casca"); 
-        Avaliacao novaAvaliacao = new Avaliacao(3," ");
+        Avaliacao novaAvaliacao = new Avaliacao("Ana Clara Damini",3,"Saborosos e sequinhos, mas pela grossa expessura da casca da abóbora, os chips ficam um pouco duros.");
+        Avaliacao outraAvaliacao= new Avaliacao("Guilherme Bitencourt",4,"");
+
 
         novaReceita.addPalavraChave(abobora);
         novaReceita.addPalavraChave(casca);
 
         novaReceita.addAvaliacao(novaAvaliacao);
+        novaReceita.addAvaliacao(outraAvaliacao);
 
         System.out.println("Testando apresentação de uma receita: ");
         System.out.println(novaReceita);

@@ -7,11 +7,14 @@ public class Avaliacao {
     private String id;
     private int nota;
     private String comentario;
+    private String autorDaAvaliacao;
 
-    public Avaliacao(int nota, String comentario) {
+    public Avaliacao(String autorDaAvaliacao, int nota, String comentario) {
         id = UUID.randomUUID().toString();
         setNota(nota);
         setComentario(comentario);
+        
+        this.autorDaAvaliacao = autorDaAvaliacao;
     }
 
     public String getId() {
@@ -42,7 +45,17 @@ public class Avaliacao {
 
     @Override
     public String toString() {
-       return String.valueOf(nota);
+       
+        if (comentario == null || comentario.trim().length() == 0) {
+            return "\nUsuario - " + autorDaAvaliacao
+                    + "\nNota: " + String.valueOf(nota) + " estrelas. \n";
+        }
+        else { 
+            return  "\nUsuario - " + autorDaAvaliacao
+                    + "\nNota: " + String.valueOf(nota) + " estrelas. \n"
+                    + "Comentario: " + comentario;
+        }
+        
     }
 }
 

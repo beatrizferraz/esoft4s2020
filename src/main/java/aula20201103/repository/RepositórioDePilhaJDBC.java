@@ -35,10 +35,10 @@ public class RepositórioDePilhaJDBC implements RepositórioDePilha {
             if (insert == null) {
                 insert = conexão.prepareStatement("insert into pilha (id, marca, modelo, amperagem) values (?,?,?,?)");
             }
-            insert.setString(1, nova.getId());
-            insert.setString(2, nova.getMarca());
-            insert.setString(3, nova.getModelo());
-            insert.setInt(4, nova.getAmperagem());
+            // insert.setString(1, nova.getId());
+            // insert.setString(2, nova.getMarca());
+            // insert.setString(3, nova.getModelo());
+            // insert.setInt(4, nova.getAmperagem());
             
             insert.executeUpdate();
             conexão.commit();            
