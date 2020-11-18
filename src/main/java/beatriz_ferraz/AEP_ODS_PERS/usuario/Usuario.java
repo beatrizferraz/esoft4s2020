@@ -1,22 +1,23 @@
-package beatriz_ferraz.AEP_ODS_PERS;
+package beatriz_ferraz.AEP_ODS_PERS.usuario;
 
-import java.util.UUID;
+import javax.persistence.Entity;
 
-public class Usuario {
+import beatriz_ferraz.AEP_ODS_PERS.BaseEntity;
+
+@Entity
+public class Usuario extends BaseEntity {
     
-    private String id;
     private String nome;
     private String senha;
 
-    public Usuario(String nome, String senha) {
-       
-        id = UUID.randomUUID().toString();
-        setNome(nome);
-        setSenha(senha);
+    public Usuario() {
+        super();
     }
 
-    public String getId() {
-        return id;
+    public Usuario(String nome, String senha) {
+        this();
+        setNome(nome);
+        setSenha(senha);
     }
 
     public String getNome(){
@@ -43,6 +44,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return nome;
+        return "Usuario: " + nome + "\n";
     }
 }

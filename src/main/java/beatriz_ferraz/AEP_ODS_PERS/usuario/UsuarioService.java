@@ -1,4 +1,4 @@
-package beatriz_ferraz.AEP_ODS_PERS;
+package beatriz_ferraz.AEP_ODS_PERS.usuario;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class UsuarioService {
     private UsuarioRepository repo;
 
     public void criarUsuarios() {
-        repo.save( new Usuario("Ana Elisa Borges","*******"));
+        repo.save( new Usuario("Ana Elisa Borges","**********"));
         repo.save( new Usuario("Barbara Panini","*********"));
         repo.save( new Usuario("Clara Nunes de Albuquerque","**********"));
         repo.save( new Usuario("Guilherme Bitencourt","********"));

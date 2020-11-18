@@ -1,24 +1,26 @@
-package beatriz_ferraz.AEP_ODS_PERS;
+package beatriz_ferraz.AEP_ODS_PERS.receita;
 
-import java.util.UUID;
+import javax.persistence.Entity;
 
-public class Avaliacao {
-    
-    private String id;
+import beatriz_ferraz.AEP_ODS_PERS.BaseEntity;
+
+@Entity
+public class Avaliacao extends BaseEntity {
+       
     private int nota;
     private String comentario;
     private String autorDaAvaliacao;
 
+    public Avaliacao() {
+        super();
+    }
+    
     public Avaliacao(String autorDaAvaliacao, int nota, String comentario) {
-        id = UUID.randomUUID().toString();
+        this();
         setNota(nota);
         setComentario(comentario);
         
         this.autorDaAvaliacao = autorDaAvaliacao;
-    }
-
-    public String getId() {
-        return id;
     }
 
     public int getNota() {

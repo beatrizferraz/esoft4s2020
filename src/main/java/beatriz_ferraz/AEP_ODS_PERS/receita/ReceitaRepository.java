@@ -1,4 +1,4 @@
-package beatriz_ferraz.AEP_ODS_PERS;
+package beatriz_ferraz.AEP_ODS_PERS.receita;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

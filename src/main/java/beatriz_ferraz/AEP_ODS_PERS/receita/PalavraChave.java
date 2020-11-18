@@ -1,21 +1,22 @@
-package beatriz_ferraz.AEP_ODS_PERS;
-
-import java.util.UUID;
+package beatriz_ferraz.AEP_ODS_PERS.receita;
 
 import javax.management.RuntimeErrorException;
+import javax.persistence.Entity;
 
-public class PalavraChave {
+import beatriz_ferraz.AEP_ODS_PERS.BaseEntity;
+
+@Entity
+public class PalavraChave extends BaseEntity{
     
-    private String id;
     private String palavra;
 
-    public PalavraChave(String palavra) {
-        id = UUID.randomUUID().toString();
-        setPalavra(palavra);
+    public PalavraChave() {
+        super();
     }
-
-    public String getId() {
-        return id;
+    
+    public PalavraChave(String palavra) {
+        this();
+        setPalavra(palavra);
     }
 
     public String getPalavra() {
