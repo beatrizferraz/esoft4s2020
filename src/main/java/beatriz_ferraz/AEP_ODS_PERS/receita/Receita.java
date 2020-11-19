@@ -1,10 +1,13 @@
 package beatriz_ferraz.AEP_ODS_PERS.receita;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -19,11 +22,11 @@ public class Receita extends BaseEntity{
     private String texto;
     //private PalavraChave palavraPesquisada;
 
-    @OneToMany
-    private List<PalavraChave> palavrasChave = new ArrayList<>(); 
+    @OneToMany(fetch = FetchType.EAGER)
+    private Set<PalavraChave> palavrasChave = new HashSet<>(); 
      
-    @OneToMany
-    private List<Avaliacao> avaliacao = new ArrayList<>(); 
+    @OneToMany(fetch = FetchType.EAGER)
+    private Set<Avaliacao> avaliacao = new HashSet<>(); 
     
     // @OneToOne
     // private Usuario autorDaReceita; 

@@ -10,7 +10,7 @@ public class AppCozinhaSustentavel {
        
         PalavraChave abobora = new PalavraChave("abobora");
         PalavraChave casca = new PalavraChave("casca"); 
-        Avaliacao novaAvaliacao = new Avaliacao("Ana Clara Damini",3,"Saborosos e sequinhos, mas pela grossa expessura da casca da abóbora, os chips ficam um pouco duros.");
+        Avaliacao novaAvaliacao = new Avaliacao("Ana Clara Damini",3,"");
         Avaliacao outraAvaliacao= new Avaliacao("Guilherme Bitencourt",4,"");
 
 
