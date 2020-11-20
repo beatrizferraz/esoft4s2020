@@ -5,6 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import beatriz_ferraz.AEP_ODS_PERS.receita.Avaliacao;
+import beatriz_ferraz.AEP_ODS_PERS.receita.PalavraChave;
 import beatriz_ferraz.AEP_ODS_PERS.receita.Receita;
 import beatriz_ferraz.AEP_ODS_PERS.usuario.Usuario;
 import beatriz_ferraz.AEP_ODS_PERS.receita.ReceitaService;
@@ -28,13 +30,10 @@ public class AppCozinhaSustentavel implements CommandLineRunner  {
     public void run(String... args) throws Exception {
         System.out.println("---------------- Receitas -------------------");
         receitaService.criarReceitas();
-        //receitaService.criarPalavrasChave();
-        receitaService.criarAvaliacoes();
 
         for (Receita r : receitaService.obterTodas()) {
-            System.out.println(r);
+            System.out.println("Receita: \n" + r.toString());
         }
-
 
         System.out.println("---------------- Usuarios -------------------");
         usuarioService.criarUsuarios();

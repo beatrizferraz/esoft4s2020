@@ -49,11 +49,13 @@ public class Avaliacao extends BaseEntity {
     public String toString() {
        
         if (comentario == null || comentario.trim().length() == 0) {
-            return "\nUsuario - " + autorDaAvaliacao
+            return  "AVALIACAO: "
+                    + "\nUsuario - " + autorDaAvaliacao
                     + "\nNota: " + String.valueOf(nota) + " estrelas. \n";
         }
         else { 
-            return  "\nUsuario - " + autorDaAvaliacao
+            return  "AVALIACAO: "
+                    + "\nUsuario - " + autorDaAvaliacao
                     + "\nNota: " + String.valueOf(nota) + " estrelas. \n"
                     + "Comentario: " + comentario;
         }

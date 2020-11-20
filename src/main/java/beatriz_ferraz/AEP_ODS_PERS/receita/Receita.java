@@ -8,24 +8,25 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import beatriz_ferraz.AEP_ODS_PERS.usuario.Usuario;
 import beatriz_ferraz.AEP_ODS_PERS.BaseEntity;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.RequestParam;
 
 @Entity
 public class Receita extends BaseEntity{
 
     private String titulo;
     private String texto;
-    //private PalavraChave palavraPesquisada;
+    // private PalavraChave palavraPesquisada;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<PalavraChave> palavrasChave = new HashSet<>(); 
      
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Avaliacao> avaliacao = new HashSet<>(); 
     
     // @OneToOne
@@ -64,6 +65,15 @@ public class Receita extends BaseEntity{
     //     return autorDaReceita;
     // }
 
+    public Set<PalavraChave> getPalavraChave() {
+        return palavrasChave;
+    }
+
+    public Set<Avaliacao> getAvaliacoes() {
+        return avaliacao;
+    }
+    
+
     public void addPalavraChave(PalavraChave novaPalavraChave) {
         this.palavrasChave.add(novaPalavraChave);
     }
@@ -79,7 +89,7 @@ public class Receita extends BaseEntity{
             stringPalavrasChave += p.toString() + "; ";
         }
 
-        String stringAvaliacao = "\nAVALIACOES";
+        String stringAvaliacao = "\n";
         for (Avaliacao a : this.avaliacao) {
              stringAvaliacao += a.toString() + "\n";
         }
