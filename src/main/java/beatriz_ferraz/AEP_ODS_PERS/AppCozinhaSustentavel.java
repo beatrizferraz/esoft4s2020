@@ -29,14 +29,14 @@ public class AppCozinhaSustentavel implements CommandLineRunner  {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("---------------- Receitas -------------------");
-        //receitaService.criarReceitas();
+        receitaService.criarReceitas();
 
         for (Receita r : receitaService.obterTodas()) {
             System.out.println("Receita: \n" + r.toString());
         }
 
         System.out.println("---------------- Usuarios -------------------");
-        //usuarioService.criarUsuarios();
+        usuarioService.criarUsuarios();
 
         for (Usuario u: usuarioService.obterTodos()) {
             System.out.println(u);
