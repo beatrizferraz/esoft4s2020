@@ -14,14 +14,16 @@ public class ProjetoService {
     private ProjetoRepository repo;
    
     public void criarProjetos() {
-        LiderDeProjeto l = new LiderDeProjeto("Barbara Lima");
+        
+        LiderDeProjeto l = new LiderDeProjeto("Silvia Brunelli");
         repo.save(l);
-
         Projeto p = new Projeto("Interface acessivel",l,"25/05/2020","15/12/2020");
         Funcionario f1 = new Funcionario("Maria Julia de Carvalho");
         p.addFuncionario(f1);
         repo.save(p);
 
+        l= new LiderDeProjeto("Barbara Lima");
+        repo.save(l);
         p = new Projeto("Interface para app infantil",l,"30/06/2020","18/12/2020");
         f1 = new Funcionario("Guilherme Oliveira Castro");
         p.addFuncionario(f1);
