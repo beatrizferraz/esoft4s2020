@@ -1,4 +1,4 @@
-package beatriz_ferraz.p_atividade20201122;
+package beatriz_ferraz.ZPROVA4B;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -36,3 +36,4 @@ public abstract class BaseEntity {
         return Objects.hashCode(id);
     }
 }
+
